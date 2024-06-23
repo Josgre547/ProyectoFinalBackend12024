@@ -1,0 +1,313 @@
+{
+	"info": {
+		"_postman_id": "55e028ce-293e-4e39-8ef7-d5195aa5f8c9",
+		"name": "Proyecto Final",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "36499619"
+	},
+	"item": [
+		{
+			"name": "Products",
+			"item": [
+				{
+					"name": "Get all",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [],
+						"body": {
+							"mode": "file",
+							"file": {}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products?page=1&limit=10&category=Electronics&sort=asc",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							],
+							"query": [
+								{
+									"key": "page",
+									"value": "1"
+								},
+								{
+									"key": "limit",
+									"value": "10"
+								},
+								{
+									"key": "category",
+									"value": "Electronics"
+								},
+								{
+									"key": "sort",
+									"value": "asc"
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get By Id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/66786d293af8004cf8708801",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"66786d293af8004cf8708801"
+							],
+							"query": [
+								{
+									"key": "id",
+									"value": "66786d293af8004cf8708801",
+									"disabled": true
+								}
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add Product",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n         \"title\": \"Ford Bronco\",\r\n         \"description\": \"A high-performance and efficient truck :).\",\r\n         \"price\": 29999.99,\r\n         \"thumbnail\": [\r\n             \"thumbnail1.jpg\",\r\n             \"thumbnail2.jpg\"\r\n         ],\r\n         \"code\": \"SP1030\",\r\n         \"stock\": 5,\r\n         \"category\": \"Trucks\",\r\n         \"status\": true\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update Product",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "     {\r\n         \"title\": \"Ford Bronco Edited\",\r\n         \"description\": \"A high-performance and efficient truck :).\",\r\n         \"price\": 39999.99,\r\n         \"thumbnail\": [\r\n             \"thumbnail1.jpg\",\r\n             \"thumbnail2.jpg\"\r\n         ],\r\n         \"code\": \"SP1030\",\r\n         \"stock\": 5,\r\n         \"category\": \"Trucks\",\r\n         \"status\": true\r\n     }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/products/667871ca1efb8c95930b232f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"667871ca1efb8c95930b232f"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/products/667871ca1efb8c95930b232f",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"products",
+								"667871ca1efb8c95930b232f"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Carts",
+			"item": [
+				{
+					"name": "Add cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Get by id",
+					"request": {
+						"method": "GET",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/667870521efb8c95930b2326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"667870521efb8c95930b2326"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Add product to cart",
+					"request": {
+						"method": "POST",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/667870521efb8c95930b2326/product/66786d293af8004cf8708802",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"667870521efb8c95930b2326",
+								"product",
+								"66786d293af8004cf8708802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete Product from cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/667870521efb8c95930b2326/product/66786d293af8004cf8708802",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"667870521efb8c95930b2326",
+								"product",
+								"66786d293af8004cf8708802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Update product quantity from cart",
+					"request": {
+						"method": "PUT",
+						"header": [],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"quantity\" : 2\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": {
+							"raw": "http://localhost:8080/api/carts/667870521efb8c95930b2326/product/66786d293af8004cf8708802",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"667870521efb8c95930b2326",
+								"product",
+								"66786d293af8004cf8708802"
+							]
+						}
+					},
+					"response": []
+				},
+				{
+					"name": "Delete all products from cart",
+					"request": {
+						"method": "DELETE",
+						"header": [],
+						"url": {
+							"raw": "http://localhost:8080/api/carts/667870521efb8c95930b2326",
+							"protocol": "http",
+							"host": [
+								"localhost"
+							],
+							"port": "8080",
+							"path": [
+								"api",
+								"carts",
+								"667870521efb8c95930b2326"
+							]
+						}
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
